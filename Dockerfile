@@ -22,7 +22,7 @@ FROM base AS build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential libpq-dev nodejs
+    apt-get install --no-install-recommends -y build-essential libpq-dev
 
 # Install application gems
 COPY --link Gemfile Gemfile.lock ./
@@ -68,4 +68,4 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bin/rails server -b 0.0.0.0"]
+CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
