@@ -64,6 +64,10 @@ POSTGRES_DB=myapp_development
 DATABASE_URL=postgres://postgres:yourpassword@db:5432/myapp_development
 ```
 
+```
+rails secret
+```
+
 ### Step 6: Build and Run the Docker Containers
 
 ```
